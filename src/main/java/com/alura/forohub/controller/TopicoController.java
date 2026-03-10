@@ -108,18 +108,17 @@ public class TopicoController {
     @Transactional
     public DatosDetalleTopico actualizar(
             @PathVariable Long id,
-            @RequestBody @Valid DatosActualizarTopico datos
+            @RequestBody DatosActualizarTopico datos
     ) {
-
-        if (!id.equals(datos.id())) {
-            throw new RuntimeException("El ID de la URL no coincide con el ID del cuerpo");
-        }
 
         Topico topico = topicoRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Tópico no encontrado"));
 
-        Curso curso = cursoRepository.findById(datos.cursoId())
-                .orElseThrow(() -> new RuntimeException("Curso no encontrado"));
+        Curso curso = null;
+        if (datos.cursoId() != null) {
+            curso = cursoRepository.findById(datos.cursoId())
+                    .orElseThrow(() -> new RuntimeException("Curso no encontrado"));
+        }
 
         topico.actualizar(datos, curso);
 

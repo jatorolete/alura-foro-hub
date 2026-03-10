@@ -44,10 +44,18 @@ public class Topico {
 
     // actualiza Topico
     public void actualizar(DatosActualizarTopico datos, Curso curso) {
-        this.titulo = datos.titulo();
-        this.mensaje = datos.mensaje();
-        this.status = datos.status();
-        this.curso = curso;
+        if (datos.titulo() != null) {
+            this.titulo = datos.titulo();
+        }
+        if (datos.mensaje() != null) {
+            this.mensaje = datos.mensaje();
+        }
+        if (datos.status() != null) {
+            this.status = datos.status();
+        }
+        if (curso != null) {
+            this.curso = curso;
+        }
     }
 
     public Long getId() {
