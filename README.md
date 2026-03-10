@@ -17,14 +17,19 @@ La API permite gestionar tópicos de un foro: creación, listado, detalle, actua
 - Validación de duplicados
 - Validación de autor y curso
 - Persistencia en base de datos
-  ✔️ 2. Listar tópicos (GET /topicos)
+
+✔️ 2. Listar tópicos (GET /topicos)
 - Ordenamiento por fecha
 - Filtro por curso
 - Filtro por año
 - Paginación opcional
-  ✔️ 3. Detalle de un tópico (GET /topicos/{id})
-  ✔️ 4. Actualizar un tópico (PUT /topicos/{id})
-  ✔️ 5. Eliminar un tópico (DELETE /topicos/{id})
+  
+✔️ 3. Detalle de un tópico (GET /topicos/{id})
+
+✔️ 4. Actualizar un tópico (PUT /topicos/{id})
+
+✔️ 5. Eliminar un tópico (DELETE /topicos/{id})
+
 
 ## 🗂️ Estructura del proyecto
 src/main/java/com/alura/forohub ├── controller ├── domain │    ├── topico │    ├── respuesta │    └── usuario ├── infra │    └── security └── AluraForoHubApplication.java
